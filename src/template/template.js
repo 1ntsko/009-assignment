@@ -1,4 +1,4 @@
-// import getCountry from "../getCountry/getCountry";
+import getCountry from "../getCountry/getCountry";
 
 const template = (movie) => {
   const today = new Date();
@@ -13,7 +13,13 @@ const template = (movie) => {
     }
   }
 
-  //   getCountry(movie.Country.currencies);
+  // function bla() {
+  //   return `<img src="https://flagpedia.net/data/flags/icon/36x27/ge.png">
+  //           <span>georgia</span>
+  //           `;
+  // }
+
+  // console.log(movie.Country);
 
   const html = `
       <li class="card" id="card_1">
@@ -29,7 +35,10 @@ const template = (movie) => {
             <span><strong>Actors:</strong> <i class="italic">${names.map(
               (name) => name
             )}</i></span>
-            <span><strong>Countries:</strong></span>
+            <span>
+              <strong>Countries:</strong>
+              ${getCountry(movie)}
+              </span>
           </div>
             <figure>
               <img
